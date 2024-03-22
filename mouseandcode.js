@@ -26,8 +26,8 @@ require('dotenv').config(); // Load environment variables from .env file
         await newPage.click('button.btn.btn-primary.os-signin-button');
         console.log(await newPage.$eval('button.btn.btn-primary.os-signin-button', button => button.getBoundingClientRect())); // Output x and y coordinates
 
-        console.log('Waiting for 10 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 10000));
+        console.log('Waiting for 5 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
 
         console.log('Scrolling to the element...');
         await newPage.evaluate(() => {
@@ -92,10 +92,10 @@ require('dotenv').config(); // Load environment variables from .env file
             }
         });
 
-        console.log('Right Click...');
+        console.log('right Click...');
         await newPage.click('div[data-id="Dg4JdGx6jlZTm4XD"]', { button: 'right' });
 
-        console.log('Waiting for 10 seconds after Right Click...');
+        console.log('Waiting for 10 seconds after right Click...');
         await new Promise(resolve => setTimeout(resolve, 10000));
 
         console.log('Scrolling to the bottom of the page...');
@@ -138,40 +138,78 @@ require('dotenv').config(); // Load environment variables from .env file
             console.error(`${desiredEditOption} option not found.`);
         }
 
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         console.log('Clicking on the "Search tools" button...');
         await newPage.click('button.command-search-trigger');
 
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 50000));
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         console.log('Typing "transform" into the search input field...');
         await newPage.type('.os-search-box-input', 'transform');
 
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 50000));
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         console.log('Pressing "Enter" to perform the search...');
         await newPage.keyboard.press('Enter');
 
+
+
+
+
+
+
+
+        // //CLICK AND HOLD LEFT
+        // // Click and hold at X:290, Y:311
+        // // await newPage.mouse.up({ button: 'left' });
+        // // console.log('UNCLICK LEFT');
+        // await newPage.mouse.move(290, 311);
+        // await newPage.mouse.down({ button: 'left' });
+        // console.log('Mouse clicked and held at X:290, Y:311');
+        // // CLICK AND HOLD
+        // // Move to X:785, Y:644 while holding the left mouse button
+        // console.log('Waiting for 3 seconds after navigation...');
+        // await new Promise(resolve => setTimeout(resolve, 3000));
+        // // await newPage.mouse.down({ button: 'left' });
+        // await newPage.mouse.move(785, 644);
+        // console.log('Mouse moved to X:785, Y:644 (holding left button)...');
+        // await newPage.mouse.up({ button: 'left' });
+        // // await newPage.mouse.up();
+        // console.log('await newPage.mouse.up();');
+
+
+        console.log('MOVING FROM LEFT TO RIGHT');
+
         console.log('Waiting for 5 seconds after navigation...');
         await new Promise(resolve => setTimeout(resolve, 5000));
 
-        //The following is broken
-        console.log('Waiting for the canvas element to be clickable...');
-        await newPage.waitForSelector('#canvas');
-
-        console.log('Clicking on the canvas element...');
-        await newPage.click('#canvas');
 
 
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        //CLICK AND HOLD RIGHT
+        // Click and hold at X:290, Y:311
+        // await newPage.mouse.up({ button: 'right' });
+        // console.log('UNCLICK RIGHT');
+        await newPage.mouse.move(290, 311);
+        await newPage.mouse.down({ button: 'right' });
+        console.log('Mouse clicked and held at X:290, Y:311');
+        // CLICK AND HOLD
+        // Move to X:785, Y:644 while holding the right mouse button
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        // await newPage.mouse.down({ button: 'right' });
+        await newPage.mouse.move(785, 644);
+        console.log('Mouse moved to X:785, Y:644 (holding right button)...');
+        await newPage.mouse.up({ button: 'right' });
+        // await newPage.mouse.up();
+        console.log('await newPage.mouse.up();');
 
-        console.log('Taking a screenshot...');
-        await newPage.screenshot({ path: 'form_submission.png' });
+
+
+
 
         // Capture mouse movements and log coordinates
         await newPage.evaluate(() => {
@@ -183,8 +221,9 @@ require('dotenv').config(); // Load environment variables from .env file
         // Keep the page open for further interaction or observation
         console.log('Move the mouse over the page to see the coordinates...');
 
-        // Prevent the script from exiting
-        await new Promise(() => { });
+
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
 
         console.log('Script completed successfully.');
     } catch (error) {
