@@ -171,22 +171,35 @@ require('dotenv').config(); // Load environment variables from .env file
         console.log('Waiting for 3 seconds after navigation...');
         await new Promise(resolve => setTimeout(resolve, 3000));
         // await newPage.mouse.down({ button: 'left' });
+        // await newPage.mouse.move(785, 644);
+        // await newPage.mouseClick(785, 644);
         await newPage.mouse.move(785, 644);
-        console.log('Mouse moved to X:785, Y:644 (holding left button)...');
-        // await newPage.mouse.up({ button: 'left' });
-        // await newPage.mouse.up();
-        console.log('await newPage.mouse.up();');
 
 
+        //TEST TO HOVER AND CLICK
+        const readline = require('readline');
+
+        // Create readline interface
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+
+        // Wait for user to press the Enter key
+        console.log('Please press the Enter key to continue...');
+        const enterPromise = new Promise(resolve => {
+            const handleLine = () => {
+                rl.removeListener('line', handleLine); // Remove the event listener
+                resolve();
+            };
+            rl.on('line', handleLine);
+        });
+
+        await enterPromise;
+        console.log('User pressed Enter to continue.');
 
 
-        console.log('MOVING FROM LEFT TO RIGHT');
-
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 5000));
-
-
-
+        // console.log('MOVING FROM LEFT TO RIGHT');
         // //CLICK AND HOLD RIGHT
         // // Click and hold at X:290, Y:311
         // // await newPage.mouse.up({ button: 'right' });
@@ -208,7 +221,6 @@ require('dotenv').config(); // Load environment variables from .env file
 
 
 
-
         // Capture mouse movements and log coordinates
         await newPage.evaluate(() => {
             document.addEventListener('mousemove', (event) => {
@@ -224,6 +236,11 @@ require('dotenv').config(); // Load environment variables from .env file
         await new Promise(resolve => setTimeout(resolve, 3000));
 
         console.log('Script completed successfully.');
+
+
+
+
+
     } catch (error) {
         console.error('An error occurred:', error);
     }
