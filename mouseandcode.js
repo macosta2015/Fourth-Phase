@@ -159,27 +159,25 @@ require('dotenv').config(); // Load environment variables from .env file
 
 
 
-
-
-
-
-        // //CLICK AND HOLD LEFT
-        // // Click and hold at X:290, Y:311
-        // // await newPage.mouse.up({ button: 'left' });
-        // // console.log('UNCLICK LEFT');
-        // await newPage.mouse.move(290, 311);
-        // await newPage.mouse.down({ button: 'left' });
-        // console.log('Mouse clicked and held at X:290, Y:311');
-        // // CLICK AND HOLD
-        // // Move to X:785, Y:644 while holding the left mouse button
-        // console.log('Waiting for 3 seconds after navigation...');
-        // await new Promise(resolve => setTimeout(resolve, 3000));
-        // // await newPage.mouse.down({ button: 'left' });
-        // await newPage.mouse.move(785, 644);
-        // console.log('Mouse moved to X:785, Y:644 (holding left button)...');
+        //CLICK AND HOLD LEFT
+        // Click and hold at X:290, Y:311
         // await newPage.mouse.up({ button: 'left' });
-        // // await newPage.mouse.up();
-        // console.log('await newPage.mouse.up();');
+        // console.log('UNCLICK LEFT');
+        await newPage.mouse.move(290, 311);
+        await newPage.mouse.down({ button: 'left' });
+        console.log('Mouse clicked and held at X:290, Y:311');
+        // CLICK AND HOLD
+        // Move to X:785, Y:644 while holding the left mouse button
+        console.log('Waiting for 3 seconds after navigation...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        // await newPage.mouse.down({ button: 'left' });
+        await newPage.mouse.move(785, 644);
+        console.log('Mouse moved to X:785, Y:644 (holding left button)...');
+        // await newPage.mouse.up({ button: 'left' });
+        // await newPage.mouse.up();
+        console.log('await newPage.mouse.up();');
+
+
 
 
         console.log('MOVING FROM LEFT TO RIGHT');
@@ -189,23 +187,23 @@ require('dotenv').config(); // Load environment variables from .env file
 
 
 
-        //CLICK AND HOLD RIGHT
-        // Click and hold at X:290, Y:311
-        // await newPage.mouse.up({ button: 'right' });
-        // console.log('UNCLICK RIGHT');
-        await newPage.mouse.move(290, 311);
-        await newPage.mouse.down({ button: 'right' });
-        console.log('Mouse clicked and held at X:290, Y:311');
-        // CLICK AND HOLD
-        // Move to X:785, Y:644 while holding the right mouse button
-        console.log('Waiting for 3 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        // //CLICK AND HOLD RIGHT
+        // // Click and hold at X:290, Y:311
+        // // await newPage.mouse.up({ button: 'right' });
+        // // console.log('UNCLICK RIGHT');
+        // await newPage.mouse.move(290, 311);
         // await newPage.mouse.down({ button: 'right' });
-        await newPage.mouse.move(785, 644);
-        console.log('Mouse moved to X:785, Y:644 (holding right button)...');
-        await newPage.mouse.up({ button: 'right' });
-        // await newPage.mouse.up();
-        console.log('await newPage.mouse.up();');
+        // console.log('Mouse clicked and held at X:290, Y:311');
+        // // CLICK AND HOLD
+        // // Move to X:785, Y:644 while holding the right mouse button
+        // console.log('Waiting for 3 seconds after navigation...');
+        // await new Promise(resolve => setTimeout(resolve, 3000));
+        // // await newPage.mouse.down({ button: 'right' });
+        // await newPage.mouse.move(785, 644);
+        // console.log('Mouse moved to X:785, Y:644 (holding right button)...');
+        // await newPage.mouse.up({ button: 'right' });
+        // // await newPage.mouse.up();
+        // console.log('await newPage.mouse.up();');
 
 
 
